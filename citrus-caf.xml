@@ -4,10 +4,22 @@
   <remote  name="ctr"
            fetch="https://github.com/Citrus-CAF"
            revision="n-8916" />
+		   
 
   <remote  name="github"
            fetch="https://github.com/" />
 
+  <remote  name="caf"
+           fetch="git://codeaurora.org/quic/la"
+           review="codeaurora.org" />
+  <default remote="caf"
+           revision="LA.BR.1.2.9_rb1.10"
+           sync-j="4" />
+		   
+
+ <!-- Include CAF repo's -->
+ <include name="codeaurora.xml" />
+ 
 <!-- Begin Citrus-CAF Additions -->
   <remove-project name="platform/build" revision="n-caf" />
   <project path="build" name="build" remote="ctr" revision="n-caf" >
@@ -60,7 +72,7 @@
 <!-- Apps -->
   <project name="packages_apps_CustomSquash" path="packages/apps/CustomSquash" remote="ctr" revision="n" />
   <remove-project name="platform/packages/apps/Bluetooth" />
-  <project name="packages_apps_Bluetooth" path="packages/apps/Bluetooth" remote="ctr" />
+  <project name="packages_apps_Bluetooth" path="packages/apps/Bluetooth" remote="ctr" revision="n" />
   <remove-project name="platform/packages/apps/Contacts" />
   <project name="packages_apps_Contacts" path="packages/apps/Contacts" remote="ctr" />
   <remove-project name="platform/packages/apps/ContactsCommon" />
@@ -131,7 +143,7 @@
   <project name="CyanogenMod/android_hardware_qcom_media" path="hardware/qcom/media" remote="github" revision="cm-14.0-caf-8916" />
 
   <!-- Masquerade -->
-  <project path="packages/apps/masquerade" name="TeamSubstratum/masquerade" remote="github" revision="master" />
+  <project path="packages/apps/masquerade" name="TeamSubstratum/masquerade" remote="github" revision="n" />
 
   <!-- Sync manifest repo -->
   <project name="manifest" path="manifest" remote="ctr"/>
